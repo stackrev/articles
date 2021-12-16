@@ -1,56 +1,53 @@
-# You Git Commits might leak your data
+# Public Git Commits might leak you Data.
 
-Specifically your personal email. In git, to upload your code, you need some form of identification usually in the form of an email. 
-In the gitbash (or .gitrc) you set it up like so:
+Specifically your personal email. 
+
+In git, to upload your code, you need some form of identification usually in the form of an email and/or username. 
+In the gitbash, you set it up like so:
 
 ```bash
 git config --global user.email dummy@dummymail.com
 git config --global user.name dummyuser
 ```
+
+You can list this info `git config --list` or go to the _~/.gitconfig_ file to see these:
+```bash
+[user]
+        email = ummy@dummymail.com
+        name = dummyuser
+```
+
 Both these peices of data link to your github/bitbucker account and attribute your actions to your account.
 
-Git commits expose your email:
-Now that you have set up the Git CLI, you must have committed your code and pushed it to a public repository, all the git commits will have the following information:
-
-Commit Hash
-Author name <Email Address>
-Date and time
-Commit Message
-
-Git Commits exposing private email addresses
-
-Even though the Web interface of Github doesn’t show the private email address, one can clone the public repository and run git log to view the commit history and there your private email addresses are exposed!
+When you add your code and then commit, this information is stored in the git log.
+If you run the command: `git log`, this is what you see:
 
 
+## Sneaky Scrapes
 
-To get all the emails from git log, you can use this one-liner (in Linux / Git Bash):
+When I set my github account, I made sure none of that my profile doesn't show my email.
+But some sneaky private data aggregator managed to get this email, and spam me with their solicitations for whatever software development products they offered.
 
-STEPS:
+How did they do it - they crawled through all public repos and ran this command:
 
-Clone the Github repository 
-cd into the cloned repository
-Run the one-liner:
-git log | grep Author | cut -d ":" -f2 | sort -u | awk '{print $NF}' | sed -r 's/<// ; s/>//'
-How to Protect?
-To protect the private email addresses from being exposed in your commits, you must configure Github settings as well as Git CLI.
+`git log --format='%ae' | sort -u`
 
-1. Github Settings:
-Github provides two options to protect your private email addresses from being exposed. Go to Your Profile -> Emails and enable these options:
+Running this command, this it what it shows, smart of them:
 
-Keep my email addresses private.
-Block command line pushes that expose my email.
 
-Github Settings
 
-Note: The above options may differ in Bitbucket, Gitlab and other code hosting platforms.
 
-2. Changes in Git CLI:
-By enabling the second option in Github settings, any further commit which contains your private email address will be blocked. Now you have to configure the Git CLI to not include your private email address.
+With this in mind let's protect ourselves.
 
-You can use any random email id like email@example.com. But the problem is that your commits won’t be attributed to you!
-Alternatively, Github provides a dummy email id (highlighted in the previous image), which ensures that commits are attributed to you and appear in your contributions graph.
-Any commits you made prior to changing your commit email address are still associated with your previous email address. You must delete your whole commit history to get rid of that email address.
+## Obfuscate your commits
 
-Change the email address using the git command:
+Github offer us tools to hide our info.
 
-git config --global user.email <dummy-github-email>
+Go to your [profile settings](https://github.com/settings/emails). In this page you will see these 2 options:
+
+- **Keep my email addresses private**: Github creates dummy emails for you. This we will use later.
+- **Block command line pushes that expose my email**: Makes sure you do not push any private information.
+
+Enabling the above will require changes to our gitbask.  We need to set our email to the random email created using `git config --global user.email`
+
+
