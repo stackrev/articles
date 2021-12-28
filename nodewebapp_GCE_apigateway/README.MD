@@ -3,7 +3,7 @@
  
  ![Image: systango api-gateway-use](API-Gateway-Banner.jpg "Image: systango api-gateway-use")
 
-Google API Gateway is out, and for those used to AWS or Azure API Gateways it comes with a serious obstacle: it does not have CORs support!
+Google API Gateway is out, and for those used to AWS or Azure API Gateways, it comes with a serious obstacle: it does not have CORs support!
 
 What you will learn from this article:
 - Setup a veujs webapp.
@@ -22,12 +22,12 @@ What you will learn from this article:
   - [Github](#github)
 
 
-## Easy Vuejs Setup
+## The Vuejs Setup
 
 This is easy: `vue create hello-world`
 
 You will wil get out of the box everything you need. 
-What's pertinent to this article is this simple form that takes a name and has a submit button:
+What's pertinent to this article is this simple form we created, that takes a name and has a submit button:
 
 ```jsx
 <v-form ref="form">
@@ -58,7 +58,7 @@ Thats really all, run `yarn install` and `yarn serve` and you can see in the bro
 
 ![The webapp view](webapp_view.PNG)
 
-But - there is more, we want a **backend**, and we want a serverless one in Google Cloud.
+There is more, we want a **backend**, and we want a serverless one in Google Cloud.
 
 ## Spin up a Google Cloud Function
 
@@ -308,11 +308,11 @@ Run again the webapp and you are all done. You have integrated your webapp to a 
 - [Cloud Functions](https://developers.google.com/learn/topics/functions)
 - [Flask Quickstart](https://flask.palletsprojects.com/en/2.0.x/quickstart)
 - [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
-- - [OpenAPI and swagger editor](https://editor.swagger.io/)
+- [OpenAPI and swagger editor](https://editor.swagger.io/)
 
 ## Github
 
-Code and article shown here are available on [github](https://github.com/adamd1985/articles).
+Code and article shown here are available on [github](https://github.com/adamd1985/articles/tree/main/nodewebapp_GCE_apigateway).
 
 #
 <div align="right">Made with :heartpulse: by <b>Adam</b>
