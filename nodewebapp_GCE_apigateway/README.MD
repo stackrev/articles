@@ -2,6 +2,16 @@
  <!-- title: Create a webapp with CORs and Google API Gateway -->
  
  ![Image: systango api-gateway-use](API-Gateway-Banner.jpg "Image: systango api-gateway-use")
+ 
+ - [Create a webapp with CORs and Google API Gateway](#create-a-webapp-with-cors-and-google-api-gateway)
+  - [Easy Vuejs Setup](#easy-vuejs-setup)
+  - [Spin up a Google Cloud Function](#spin-up-a-google-cloud-function)
+  - [The first CORs issue](#the-first-cors-issue)
+  - [Cloud Function and API Gateway](#cloud-function-and-api-gateway)
+    - [Debugging CORs on Google API Gateway](#debugging-cors-on-google-api-gateway)
+  - [References](#references)
+  - [Github](#github)
+
 
 Google API Gateway is out, and for those used to AWS or Azure API Gateways, it comes with a serious obstacle: it does not have CORs support!
 
@@ -12,14 +22,6 @@ What you will learn from this article:
 - Define your function with OpenAPI.
 - Deploy and test your API Gateway.
 
-- [Create a webapp with CORs and Google API Gateway](#create-a-webapp-with-cors-and-google-api-gateway)
-  - [Easy Vuejs Setup](#easy-vuejs-setup)
-  - [Spin up a Google Cloud Function](#spin-up-a-google-cloud-function)
-  - [The first CORs issue](#the-first-cors-issue)
-  - [Cloud Function and API Gateway](#cloud-function-and-api-gateway)
-    - [Debugging CORs on Google API Gateway](#debugging-cors-on-google-api-gateway)
-  - [References](#references)
-  - [Github](#github)
 
 
 ## The Vuejs Setup
