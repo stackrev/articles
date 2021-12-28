@@ -1,0 +1,66 @@
+# openapi2-functions.yaml
+swagger: "2.0"
+info:
+  title: Hello
+  description: Hello World
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+x-google-endpoints:
+- name: https://hellogw-10huahm.nw.gateway.dev
+  allowCors: True
+paths:
+  /hello:
+    options:
+      summary: CORS pre-flight
+      operationId: corsHello
+      x-google-backend:
+        address: https://europe-central2-yourproject.cloudfunctions.net/hello
+      responses:
+        '200':
+          description: A successful response
+    post:
+      summary: Hello World
+      operationId: hello
+      x-google-backend:
+        address: https://europe-central2-yourproject.cloudfunctions.net/hello
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: name
+          description: To whom we will say hello.
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+      responses:
+        200:
+          description: Hello string
+          schema:
+            type: object
+            properties:
+              text:
+                type: string
+                description: hello world.
+        400:
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: The error message
+        500:
+          description: Internal error
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: The error message

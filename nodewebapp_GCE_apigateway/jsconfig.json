@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "commonJS",
+    "target": "es2015",
+    "baseUrl": ".",
+  },
+  "exclude": ["node_modules", "dist", "docs/dist"],
+}
