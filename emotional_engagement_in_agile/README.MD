@@ -4,6 +4,10 @@
  
  ![Image: Emotionally engaged teams](banner.jpg "Image: Shutter Stock")
  
+- [Emotional Engagement in an Agile Transformation](#emotional-engagement-in-an-agile-transformation)
+- [Basics of an Agile Framework](#basics-of-an-agile-framework)
+  - [References](#references)
+  - [Github](#github)
 
 We all experienced organizations where agile was implemented as a dry project management tool. When it's only about process and metrics, the teams will just push back against this perceived overheads, delaying or stopping the transformation altogether.
 
