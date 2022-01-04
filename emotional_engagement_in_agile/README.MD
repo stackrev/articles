@@ -96,7 +96,7 @@ For Agile teams, this is the control and ownership of their work, effort, time a
 
 ## Github
 
-Code and article shown here are available on [github](https://github.com/adamd1985/articles/tree/main/nodewebapp_GCE_apigateway).
+Code and article shown here are available on [github](https://github.com/adamd1985/articles/tree/main/emotional_engagement_in_agile).
 
 #
 <div align="right">Made with :heartpulse: by <b>Adam</b></div>
