@@ -1,4 +1,4 @@
-# Emotional Engagment in an Agile Transformation
+# Emotional Engagement in an Agile Transformation
 
  <!-- title: Emotional Engagment in an Agile Transformation -->
  
