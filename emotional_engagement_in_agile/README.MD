@@ -22,7 +22,7 @@ Striving to be autonomous will engender a *culture* that promotes these attribut
 
 **Self-Driven**
 
-- Collaborate on a known objective every day and drive/support all teams to achieve these goals.
+- Collaborate on a known objective every day and drive/support all teams to achieve this objective.
 - Not reactive, because the work and end-goals are known.
 - Have autonomy over the work whose output aligns with the Company's goals.
 
@@ -34,7 +34,7 @@ Striving to be autonomous will engender a *culture* that promotes these attribut
 **Team-Member-Driven**
 
 - A designed work processes and environment that enables everyone to be a top-performer.
-- Contribute at decision-making as at development-level, everyone's input is relevant - regardless of position, team or title.
+- Members are equal partners at decision-making as at development-level, everyone's input is relevant - regardless of position, team or title.
 - Team achieved the organization's trust to make informed decisions and produce value within  their space (collocated or distributed). 
 - Every team has the freedom to write their own work agreements, to assign members different tasks within the team and set their aspects and duties within the team. 
 
@@ -50,7 +50,7 @@ Striving to be autonomous will engender a *culture* that promotes these attribut
 
 **Act as An Organization**
 
-- None operate as silos - there are no responsability boundaries and no us versus them.
+- None operate as silos - there are no responsibility boundaries and no us versus them.
 - All have shared goals for collaboration and operate as a cohesive group of professionals.
 
 ![Image: Start by Empowering the Team](Team-Empowerment.png "Image: Image Stock")
@@ -61,7 +61,7 @@ To arrive to this point, the teams need to work in an Agile framework - or at le
 
 # Basics of an Agile Framework
 
-Without subscribing to any framework's process and vocabulary, these are the basic attributes that comprise agile development teams all round:
+Without subscribing to any framework's process and vocabulary, these are the basic attributes that are pertinent within an agile development team:
 
 **Structured Work**
 
@@ -71,7 +71,7 @@ Without subscribing to any framework's process and vocabulary, these are the bas
 - Measurements are defined to assess the work and the value it has delivered, this includes non-functional requirements.
 - Development teams always know the big picture.
 - Development teams do not get overwhelmed with unnecessary work, work that is a result of waste, bad engineering, bad management and/or bad requirements.
-- Work will be completed, with intent and success. There will never again be a graveyard of WIPs. Each selected work item is delivered to completion ASAP.
+- Work will be completed once picked up, with intent and success. Passing the defined Definition of Done (DoD). Work in Progress (WIP) is kept to the minimum.
 
 **Valuable Ceremonies and Deliverables**
 
@@ -80,7 +80,7 @@ Without subscribing to any framework's process and vocabulary, these are the bas
 - Planning meeting is done before each iteration to define what next piece of business increment the devs will work towards achieving. 
 - Reviews and retrospectives at each event (a delivery or iteration) are scheduled. Here actionable feedback and ideas are generated while working demos are displayed and work progress and backlog is reviewed.
 - Teams use metrics, tools and activities that lead to visibly increased value in what the team delivers.
-- Deliveries are incremental and visible.
+- Deliveries are incremental and visible. Deliverables align to the organizations plans and needs.
 
 **Transparent, Inclusive and Predictable**
 
@@ -90,8 +90,9 @@ Without subscribing to any framework's process and vocabulary, these are the bas
 
 ![Image: Agile Planning](agilebasics.jpg "Image: Shutter Stock")
 
-For an agile transformation, just like human interaction, that there is visible gain leading to visible enthusiasm. 
-For Agile teams, this is the control and ownership of their work, effort, time and schedule. A happy team is a productive team.
+Just like any human interaction and exchange,  there needs to be visible gain for both parties and enthusiasm. For Agile teams, this is the control and ownership of their work, effort, time and schedule. 
+
+A happy team is a productive team.
 
 ## References
 
