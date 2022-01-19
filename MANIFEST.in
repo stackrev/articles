@@ -1,2 +1,0 @@
-include versioneer.py
-include monoversioning/_version.py
