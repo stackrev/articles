@@ -1,0 +1,3 @@
+include versioneer.py
+include monoversioning/_version.py
+include ./_version.py
