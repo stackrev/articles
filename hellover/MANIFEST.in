@@ -1,0 +1,8 @@
+include versioneer.py
+include hellover/_version.py
+include ./_version.py
+include README.MD
+include LICENSE
+include requirements.txt
+recursive-exclude * *.py[co]
+graft hellover
