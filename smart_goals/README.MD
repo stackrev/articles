@@ -23,7 +23,7 @@ Say you are in the sprint planning, and you get this assigned:
 `Refactor this lib, make it better.`
 
 
-This story, can only be described in here in this Dilbert panel - a shovel full of arbitrary assignments.
+This story, can only be described here, in this Dilbert panel - _a shovel full of arbitrary assignments_.
 
  ![Image: From Dilbert: Shovel-full of assignments..](Dilbert_PHB.jpg "From Dilbert: Shovel-full of assignments..")
 
