@@ -33,15 +33,12 @@ Why is this not a meaningful piece of work? There is no goal at all.
 - It is not specific, doesn't tell us what exactly it wants. 
 - Doesn't tell us when is it ready, this makes it open to everyone's interpretation.
   
-With these gaps in mind, let's challenge the story and ask our Product Owner to define it better, which they do when they come with this:
+With these gaps in mind, let's challenge the story and ask our Product Owner to define it better, which they do, when they come up with this::
 
 ```text
-The lib has a lot of unused code, is hard to read, and has complex hierarchies.
-
-We use it to schedule jobs, but because it’s obscure and error prone, it forces our team to use less efficient substitutes.
-
-If we can have everyone use our library within this quarter, this will reduce our dependencies and improve our job scheduling for our new business initiative. 
-
+The library has a lot of unused code, is hard to read because it has complex object hierarchies. 
+We use it to schedule jobs, but because it’s obscure and error prone, it forces our team to use less efficient substitutes. 
+If we can have everyone use our library within this quarter, it would reduce our dependencies on 3rd parties and improve our job scheduling for our new business initiative. 
 As a developer maintaining this library, do you think we can do this?
 ```
 
@@ -50,7 +47,7 @@ This is a better goal to undertake, because it is:
 - **Specific** - What it is, Why we need it and Who it affects.
 - **Measurable** - We listed quantifiable gaps to fill (unused code, complex object hierarchies, adoption). We know its ready when 100% adoption rate is achieved.
 - **Achievable** - PO is asking feedback from the implementers. The people that will work on these objectives are the ones to give the right feedback to create good goals.
-- **Relevant** - There is a new business initiative (we have motivation), the PO is asking the  right person - engineer, and it fit our culture of  constant improvement which boost teams’ developer experience.
+- **Relevant** - There is a new business initiative (we have motivation), the PO is asking the  right person - engineer, and it fits our culture of constant improvement which boost teams’ developer experience.
 - **Time-Bound** - Within the quarter, but also the PO is asking the implementers to estimate the steps required and lock them in the coming sprints.
 
 
@@ -64,12 +61,12 @@ What about this one:
 
 An objective that would have been set by Dilbert's psychopathic character: Catbert.
 
-...and Catbert would be correct in this goal, because it fits the SMART criteria.
+...and Catbert would be correct in setting this goal, because it fits the **SMART** criteria.
 
 Yet such a goal should not be given, nor undertaken:
 
 - There is nothing in it for you or your teams. It only benefits the goal setter's ego.
-- No greater goal. Just being the best is not a concrete goal, but a journey.
+- Achieves no greater goal. Just being the best is not a concrete goal, it's an aspiration.
 - Lots of assumptions. 1 Billion, that is 1/7th of the world! Maybe its possible; Facebook did reach 3 billion users in 13 years - but it's too far of a moonshot.
 
 ## Anatomy of a Goal
@@ -120,7 +117,7 @@ Yet such a goal should not be given, nor undertaken:
 
 *Our service is a business critical component that is part of a larger business initiative and will require new development.* 
 
-*Given we our organization is reducing costs, shifting to these managed services will happen at the right time.*
+*Given our organization modernizing to a more agile technology company, shifting to these managed services will happen at the right time.*
 
 ### Time-bound
 
