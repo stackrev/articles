@@ -146,7 +146,7 @@ Why is your company work any different? Don't be like Dilbert here, you're smart
 
 ## Github
 
-Code and article shown here are available on [github](https://github.com/adamd1985/articles/tree/main/emotional_engagement_in_agile).
+Code and article shown here are available on [github](https://github.com/adamd1985/articles/tree/main/smart_goals).
 
 #
 <div align="right">Made with :heartpulse: by <b>Adam</b></div>
