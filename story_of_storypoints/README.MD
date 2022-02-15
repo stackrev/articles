@@ -10,9 +10,6 @@ Say you are sitting with your scrum teams, planning for their sprints. When sudd
 
 ![Image: NBC Universal Television](dwight-schrute-quotes.jpg "Image: NBC Universal Television")
 
-
-We know that estimation is the hardest part of software development. If done well though, good estimations will be the cause of good requirements capturing and Story Points - these are your key to good estimations.
-
 ## Story Points are Nothing and Everything
 
 Story points are an abstraction used to measure the EFFORT in delivering a piece of work from your backlog. Dates and hours don't assume scope-creep or business-as-usual (BAU) efforts. We also know that dates don't play well with software engineers, having a detrimental effect on them.
@@ -28,6 +25,8 @@ Story points are meaningless without a velocity. A **velocity is only possible w
 Using story points with a time-box causes large and uncertain pieces of work to be broken down into **VISIBLE and ACTIONABLE increments**. This abstraction helps to create certainty, visible delivery, commitment and consensus to the solution you wish to deliver.
 
 Teams work in different velocities and with different opinions on what constitutes complexity and difficulty. The team is consistent though, therefore the Story points are stable - 1 story point for an easy piece of work now, should be 1 story point for an easy task next year.
+
+We know that estimation is the hardest part of software development. If done well though, good estimations will be the cause of good requirements capturing and Story Points - these are your **key to good estimations**.
 
 ## Pitfalls in using Story points 
 
