@@ -4,7 +4,7 @@
  
 ![Image: WeAreTeachers Staff on February 5, 2021](Best-Short-Stories-for-Middle-School.jpg "Image: WeAreTeachers Staff on February 5, 2021")
  
-Say you are sitting with your scrum teams, planning for their sprints. When suddenly, an engineer barges in, professing they are now a 10X engineer.
+Say you are sitting with your scrum teams, planning for their sprints. When suddenly, an engineer barges in professing they are now a 10X engineer.
 
 "Why?" everybody asks, to which he exclaims "because your average sprint velocity is 10 story points, and I closed at 100 points last sprint! "
 
