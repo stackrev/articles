@@ -1,0 +1,7 @@
+spacy
+SpacyTextBlob
+pandas
+vaderSentiment
+tqdm
+Counter
+gensim
