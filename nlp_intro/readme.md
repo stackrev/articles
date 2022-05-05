@@ -4,27 +4,28 @@
 ![Image: image from Star Trek Stands With Our AAPI Community](startrekpeace.JPG "image from Star Trek Stands With Our AAPI Community")
 
 - [Classifying Social Media Posts as Hateful using NLP](#classifying-social-media-posts-as-hateful-using-nlp)
-  - [The NLP Frameworks: spaCY and Sktlearn](#the-nlp-frameworks-spacy-and-sktlearn)
-  - [Training with Datasets](#training-with-datasets)
-  - [Training NLP Pipelines](#training-nlp-pipelines)
+  - [The NLP Frameworks: SpaCY and Scikit-learn](#the-nlp-frameworks-spacy-and-scikit-learn)
+  - [Choosing the Right Dataset](#choosing-the-right-dataset)
+  - [Training The NLP Pipelines](#training-the-nlp-pipelines)
 - [Applying Named Entity Recognition (NER)](#applying-named-entity-recognition-ner)
-- [Concluding our Analysis](#concluding-our-analysis)
+- [Conclusion](#conclusion)
   - [References](#references)
   - [Github and Kaggle](#github-and-kaggle)
 
 
-Say you are going through your favorite Scifi social network _Trekked-out_, and you are getting blasted with violent posts, shared to your timeline or worse getting tagged.
-Now as a peaceful Trekky, you don't want to experience this but the said platform has double-standards to its community guidelines and will not go against it's Starfleet or Romulan overlords.
+Say you are going through your favorite sci-fi social network, and you are getting blasted with violent posts shared to your timeline or worse; getting tagged to these.
 
-So you need to go _rogue_ and take action with the power of NLP.
+Now as a peaceful *Trekky*, you don't want this experience, but the platform you are on has double standards in its content moderation and will not act against the will of its Starfleet or Romulan overlords.
 
-In this article, we will collect a set of polarizing posts, scraped from these platforms or provided pubicly in datasets, and train NLP models to recognize these violent posts.
+So you need to go **rogue**, and take action with the power of NLP.
 
-## The NLP Frameworks: spaCY and Sktlearn
+In this article, we will operate on polarizing posts, scraped from these platforms or provided datasets in public datasets, and utilize NLP to tag these toxic posts.
 
-SktLearn is a set of simple and efficient tools for predictive data analysis built on NumPy, SciPy, and matplotlib. Luckily for us its Open source.
+## The NLP Frameworks: SpaCY and Scikit-learn
 
-SpaCy also is free and opensource, and is usually used for its simplicity and documentation (given we aren't datascientists yet).
+**Scikit-learn** is a set of simple tools for predictive data analysis built on NumPy, SciPy, and matplotlib. Luckily for us its, all of it is free and open source.
+
+**SpaCY** is another free framework for NLP, chosen for its simplicity and documentation (given we aren't data scientists yet!).
 
 Generally you'd want to use these frameworks to process large bodies of text (aka corpora), with the intention of:
 
@@ -32,18 +33,18 @@ Generally you'd want to use these frameworks to process large bodies of text (ak
 - Who is doing what to whom?
 - What organizations and products are mentioned in the text?
 
-## Training with Datasets
+## Choosing the Right Dataset
 
 We will use a public dataset curated by [HuggingFace](https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speechWe), consisting of 39k comments annotated by 7k annotators. The annotators tried to rank toxic these social media posts are.
 
 The dataset classifies the _text_ as follows (with scores):
 
-- insult - 0-4, how serious the insult is.
-- humiliate - 0-4, the humiliation how strong.
-- dehumanize - 0-4.
-- violence - 0-4, how serious the violence is suggested. We will be looking closely at this.
-- genocide - 0-4, any references to race killing.
-- hatespeech - General hate sintmient. 0-2 (why not 4? That is what the dataset annotators decided).
+- **insult** - 0-4, how seriously insulting it is.
+- **humiliate** - 0-4, is it trying to humiliate anyone?
+- **dehumanize** - 0-4, dehumanizing anyone person or group?
+- **violence** - 0-4, how serious the violence is suggested? We will be looking closely at this.
+- **genocide** - 0-4, any references to a race in the violence?
+- **hatespeech** - General hate sentiment. 0-2 (why not 4? That is what the dataset annotators decided).
 
 In preprocessing, we will normalize these scores to either 1 or 0 (it's violent or not).
 
@@ -55,7 +56,7 @@ dataset = datasets.load_dataset('ucberkeley-dlab/measuring-hate-speech', 'binary
 df = dataset['train'].to_pandas()
 ```
 
-## Training NLP Pipelines
+## Training The NLP Pipelines
 
 An NLP pipeline has these basic steps:
 
@@ -188,6 +189,39 @@ for model in models:
     prediction = model.predict([clean_text(sample_text2)])
     print(f'category: {category}, predicted {prediction} for:\n {sample_text2}\n\n')
 ```
+The results being new posts getting classified:
+```
+category: hatespeech, predicted: [0] for
+ The Galatic #Federation is selling a timeline of the facist Klingon and wicked Romulan invasions as #NFTs!
+The collection is titled #SpaceHistory: The Galatic War Museum and each token is associated with space battle.
+It was confirmed by tweet of the Mega President of the United Federation of Planets: Laira Rillak, that the federation has trust in #blockchaintechnology!
+Long live freedom through digital assets, death to the slaves of Kahless the Unforgettable.
+
+category: hatespeech, predicted [0] for:
+ If ya ain't human or similar ANNNDDDDD pretty: you need to die, goddam slave. #Wakeup
+
+
+category: insult, predicted: [1] for:
+ The Galatic #Federation is selling a timeline of the facist Klingon and wicked Romulan invasions as #NFTs!
+The collection is titled #SpaceHistory: The Galatic War Museum and each token is associated with space battle.
+It was confirmed by tweet of the Mega President of the United Federation of Planets: Laira Rillak, that the federation has trust in #blockchaintechnology!
+Long live freedom through digital assets, death to the slaves of Kahless the Unforgettable.
+
+category: insult, predicted [1] for:
+ If ya ain't human or similar ANNNDDDDD pretty: you need to die, goddam slave. #Wakeup
+
+
+category: violence, predicted: [0] for:
+ The Galatic #Federation is selling a timeline of the facist Klingon and wicked Romulan invasions as #NFTs!
+The collection is titled #SpaceHistory: The Galatic War Museum and each token is associated with space battle.
+It was confirmed by tweet of the Mega President of the United Federation of Planets: Laira Rillak, that the federation has trust in #blockchaintechnology!
+Long live freedom through digital assets, death to the slaves of Kahless the Unforgettable.
+
+category: violence, predicted [1] for:
+ If ya ain't human or similar ANNNDDDDD pretty: you need to die, goddam slave. #Wakeup
+
+ ... etc
+```
 
 # Applying Named Entity Recognition (NER)
 
@@ -218,9 +252,7 @@ spacy.cli.download("en_core_web_sm")
 nlp = spacy.load("en_core_web_sm")
 ```
 
-With the pipeline ready and available, we can provide some hints in the form of label patterns to add more classifications the NER ouput.
-
-Once we know what to label (in addition to the default categories Spacy offers), we can execute the pipeline on the text and analyze it. Below you can see how Spacy outline entities within the text.
+In addition, we can provide some hints in the form of label patterns, to add more classifications to the NER pipeline output:
 
 ```python
 pattern=["space battle", "evil agenda", "genocide", "#EvilMonarchs", "facist", "Red Matter", "Borg Cubes",  \
@@ -240,11 +272,15 @@ sample_doc2 = nlp(sample_text2)
 displacy.render(sample_doc1, style="ent", jupyter=True)
 ```
 
-# Concluding our Analysis
+Once we know what to label (in addition to the default categories Spacy offers), we can execute the pipeline on the text and analyze it. Below you can see how spaCY outlines entities within the text:
+![Entities in posts](ner.jpg)
+
+
+# Conclusion
 
 We trained models to identify how toxic posts are and we used Spacy to find who is doing these and at who.
 
-With this automated knowledge, we have the power to affect changes to our feed and more. Live long and Prosper!
+With this automated knowledge, we have the power to affect changes to our feed and more. *Live long and Prosper!*
 
 ## References
 
