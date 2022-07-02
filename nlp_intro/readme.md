@@ -273,7 +273,7 @@ displacy.render(sample_doc1, style="ent", jupyter=True)
 ```
 
 Once we know what to label (in addition to the default categories Spacy offers), we can execute the pipeline on the text and analyze it. Below you can see how spaCY outlines entities within the text:
-![Entities in posts](ner.jpg)
+![Entities in posts](ner.JPG)
 
 
 # Conclusion
