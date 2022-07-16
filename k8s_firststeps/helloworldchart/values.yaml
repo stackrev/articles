@@ -1,0 +1,13 @@
+replicaCount: 3
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+     cpu: 100m
+     memory: 128Mi
+
+port: 8080
+
+image: helloworld:1
