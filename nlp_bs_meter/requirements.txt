@@ -1,0 +1,6 @@
+spacy
+pandas
+datasets
+ipywidgets
+sklearn
+nltk
