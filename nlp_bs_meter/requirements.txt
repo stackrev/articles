@@ -4,3 +4,4 @@ datasets
 ipywidgets
 sklearn
 nltk
+tweepy
