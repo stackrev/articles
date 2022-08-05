@@ -200,7 +200,7 @@ Yielding a **Request** object, will run the spider on the new page provided in t
 </section>
 ```
 
-# Difficulties in Scraping
+# Difficulties with Scraping
 
 - The Web grows organically, changes constantly and is a hot mess. You scraper needs to be updated often - or switch to **APIs** if the site offers these.
 - Each website - and sometimes the pages within - is unique and will need custom code to scrape.
@@ -208,7 +208,7 @@ Yielding a **Request** object, will run the spider on the new page provided in t
 
 Scraping is a lot of effort and maintenance.
 
-# Conclussion
+# Conclusion
 
 In this article, we automated the browsing of a site, through the use of python's *scrapy*, *beautifulsoup* and *xpath*.
 
