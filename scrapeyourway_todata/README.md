@@ -225,7 +225,7 @@ When scraping, always be fair and respectful to sites that you are crawling thro
 
 ## Github
 
-Article is available on [Github](https://github.com/adamd1985/gettyimages-scraper) and its sample scraper can be forked from this other [repo](https://github.com/adamd1985/gettyimages-scraper)
+Article is available on [Github](https://github.com/adamd1985/articles/edit/main/scrapeyourway_todata) and its sample scraper can be forked from this other [repo](https://github.com/adamd1985/gettyimages-scraper)
 
 #
 
