@@ -86,7 +86,7 @@ Exciting isn't it, we have a script that can browse for you with this command:
 
 `scrapy crawl gettyimages`
 
-But **WAIT**, before running a scraper, understand some rules of engagment to be a good scraper and not a data stealing villian:
+But **WAIT**, before running a scraper, understand some rules of engagement to be a good scraper and not a data-stealing villain:
 - Don't be a burden to the site's infrastructure - i.e. don't **DDOS** the site.
 - Respect the **robots.txt** - follow the delays and guidelines defined here.
 - Don't violate copyright - The images we are scraping are royalty free (not that it ever stopped any 'high' growth startup).
