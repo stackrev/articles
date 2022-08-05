@@ -24,9 +24,9 @@ Scraping is an automated process of gathering information from the Internet.
 
 Why automated? 
 
-Think of how repetitive it is to search for an item in your favorite webstore: all that clicking, scrolling, reading, redirection etc. This is not a viable process selling data at an industry-level to your meme data startup clients. And, if you are an engineer at heart, you know how bad repetitive manual work is - so we code in a web scraper to automatically injest all that data.
+Think of how repetitive it is to search for an item in your favorite webstore: all that clicking, scrolling, reading, redirection etc. This is not a viable process selling data at an industry-level to your meme data startup clients. And, if you are an engineer at heart, you know how bad repetitive manual work is - so we code in a web scraper to automatically ingest all that data.
 
-Be warned though, that constant maintenance is key to a scraper, given how fluid the internet is. That is why eventually you want to move your scrappy meme scraping startup to work with data vendors and data apis.
+Be warned though - constant maintenance is key to a scraper, given how fluid the internet is. That is why eventually you want to move your scrappy meme scraping startup to work with data vendors and data apis.
 
 ## Eyeballing a Website
 
