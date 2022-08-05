@@ -94,7 +94,7 @@ But **WAIT**, before running a scraper, understand some rules of engagement to b
 
 Now you can run the spider, it will just output the HTML in the console
 
-## Injesting Scraped Crumbs
+## Ingesting Scraped Crumbs
 
 Back to our website analysis, this is the HTML we will work with:
 
