@@ -1,5 +1,5 @@
-# Scrape Your Way to Data - as a Startup
- <!-- title: Scrape Your Way to Data - as a Startup -->
+# Scrape Your Way to Data
+ <!-- title: Scrape Your Way to Data -->
 
 - [Scrape Your Way to Data - as a Startup](#scrape-your-way-to-data---as-a-startup)
 - [Scraping and Selling](#scraping-and-selling)
