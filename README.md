@@ -9,6 +9,7 @@
 - Are your Goals Smart? - [Github](https://github.com/adamd1985/articles/blob/main/smart_goals/README.MD)
 - What's the Story on Story Points? - [Github](https://github.com/adamd1985/articles/blob/main/story_of_storypoints/README.MD)
 - Nuxt 3 and Vuejs - a Canvas for Building your Web Apps- [Github](https://github.com/adamd1985/articles/blob/main/vue-nuxt-gh-static-landingpage/README.md)
+- Why you Need BDD - Behavior Driven Development - [Github](https://github.com/adamd1985/articles/tree/main/BDD_with_JavaSprint_Python)
 
 # Usage and Licenses
 
