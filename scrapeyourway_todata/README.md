@@ -1,14 +1,14 @@
 # Scrape Your Way into Data
  <!-- title: Scrape Your Way to Data -->
 
-- [Scrape Your Way to Data - as a Startup](#scrape-your-way-to-data---as-a-startup)
+- [Scrape Your Way into Data](#scrape-your-way-into-data)
 - [Scraping and Selling](#scraping-and-selling)
   - [Eyeballing a Website](#eyeballing-a-website)
   - [Scaffolding Scraping](#scaffolding-scraping)
-  - [Injesting Scraped Crumbs](#injesting-scraped-crumbs)
+  - [Ingesting Scraped Crumbs](#ingesting-scraped-crumbs)
   - [Can I have Some More Scraps?](#can-i-have-some-more-scraps)
-- [Difficulties in Scraping](#difficulties-in-scraping)
-- [Conclussion](#conclussion)
+- [Difficulties with Scraping](#difficulties-with-scraping)
+- [Conclusion](#conclusion)
   - [References](#references)
   - [Github](#github)
 
@@ -228,5 +228,6 @@ When scraping, always be fair and respectful to sites that you are crawling thro
 Article is available on [Github](https://github.com/adamd1985/articles/edit/main/scrapeyourway_todata) and its sample scraper can be forked from this other [repo](https://github.com/adamd1985/gettyimages-scraper)
 
 #
-
-<div align="right">Made with :heartpulse: by <b>Adam</b></div>
+<div align="right">
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="#">This Article</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/adam-darmanin/">Adam Darmanin</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+</div>
