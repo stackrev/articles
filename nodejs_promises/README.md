@@ -1,36 +1,39 @@
-# Javascript does Asynchronous functions - with a lick and a Promise
- <!-- title: Javascript does Asynchronous functions - with a lick and a Promise  -->
+# A World of Promises in Javascript
+ <!-- title: A World of Promises in Javascript -->
 ![Image: JS Promises](banner.png "JS Promises")
 
-When ECMA 6 came out for javascript, it promised the moon, in fact it gave us a promises framework to deal with asynchronous code and future values.
-It was the promised land for all of us who where in callback hell.
+When ECMA 6 came out for javascript, it promised the moon, in fact it gave us a promises framework to deal with asynchronous code and future values that was just what we needed.
 
-In this article, we will revisit this promise of elegant code again with some nodejs.
+It was the promised land for all of us who where in callback hell, an elegant solution done with a lick and a promise.
 
-# A Simple Promise
+In this article, we will revisit again this framework of promises with some nodejs.
 
-Let's start with a basic promise:
+# A Pinky Promise
+
+Let's start with a simple promise:
 
 ```javascript
 const simplePromise = new Promise((resolve, reject) => {
-		// Do Something....
-		// And resolve with a successs
-		resolve("SUCCESS!");
-	});
+  // Do Something....
+  // And resolve with a successs
+  resolve("SUCCESS!");
+});
 
-	simplePromise
-		.then(console.log)
+simplePromise.then(console.log)
 };
 ```
+Which prints:
+
 ```bash
 node .\nodejs_promises\promises.js
 Finished the calls
 SUCCESS!
 ```
 
-A **Promise** comes with a *resolve()* function which when called, the ouput is passed to whatever is chained to its *then()*. All these APIs are fluent, and can chain nicely to each other, as we will see with the examples in this article.
+A **Promise** comes with a *resolve()* API, which when called, passes the ouput to the callback of *then()*.
+All these APIs are fluent, and chain nicely with each other.
 
-Now say something goes wrong in our asynchronous code - in this example it's done by calling the *reject* function - we have to process it in the *catch()* API:
+If something goes wrong in our asynchronous code, we will call the *reject* function - which passes any error to the *catch()* callback:
 ```javascript
 const simplePromise = new Promise((resolve, reject) => {
 		// Do Something....
@@ -45,13 +48,17 @@ const simplePromise = new Promise((resolve, reject) => {
 		.then(console.log)
 		.catch((error) => console.error(`Failed with: ${error}`))
 ```
+
+Prints:
+
 ```bash
 node .\nodejs_promises\promises.js
 Finished the calls
 FAILURE!
 ```
 
-The catch API can also process any thrown errors and exceptions:
+The *catch()* API can also capture any thrown errors and exceptions:
+
 ```javascript
 const simplePromise = new Promise((resolve, reject) => {
 		// Do Something....
@@ -68,23 +75,25 @@ const simplePromise = new Promise((resolve, reject) => {
 		.finally(console.log("Finished the calls"));
 ```
 
-We also finished it off with a finally API, finally allows code to run regardless of the final state:
+We also finished it off with a *finally()* API, which allows code to run regardless of the final resolved state in our promise:
+
 ```bash
 node .\nodejs_promises\promises.js
 Finished the calls
 Failed with: Error: threw Error() to FAIL!
 ```
 
-When a promise gets called, it always starts in a pending state, to be a container for a future value. 
+When a promise gets called, it always starts in a pending state, being a container for a future value. 
 It will continue executing until it resolves - returning data, or is rejected - returning an error object or message.
 
 # A Promise to Better Callbacks
 
-The problem that the promises framework aimed to lesson, the long indentations of code blocks and control statements known as: The Pyramid of Doom!
+A common problem in the old javascript, packed with callbacks, was the long indentations of code blocks and control statements known as: The Pyramid of Doom!
 
 ![Image: Pyramid of Doom](cb-hell.png "Pyramid of Doom")
 
-Let's illustrate this nuisance with this function, which we will use to login a user, pull their old state and save their new state (3 calls in total):
+Let's illustrate this nuisance with an example that requires callbacks, which we will use to login a user, pull their old state and save their new state (3 calls in total):
+
 ```javascript
 /**
  * A fake login endpoint that allows users to login.
@@ -122,7 +131,7 @@ function mockFetchWithCallback(action, callback) {
 }
 ```
 
-Here is were the pyramid forms. Imagine if you had to chain 10, 20 or 30 calls.
+As we chain these callbacks, the pyramid forms. Imagine if you had to chain 10, 20 or 30 calls!
 
 ```javascript
 // Call the mock fetch up to 3 times if the previous succeeds.
@@ -142,7 +151,7 @@ try {
 }
 ```
 
-This should print (depending if you get the random failure or not):
+The result (depending if you get the random failure or not) is uneffected by the callbacks, just our eyes and patience:
 
 ```bash
 node .\nodejs_promises\promises.js
@@ -151,11 +160,12 @@ Pulling previous user state: {"user":"joe","state":"was logged out"}.
 Exception with promise as caused by: We FAILED!
 ```
 
-# A Clean Promises
+# A Clean Promise
 
-Promises' APIs can be chained together, allowing us to orchestrate the above more elagantly.
+Promises' APIs can be chained together, allowing us to orchestrate functions like the above more elagantly.
 
-We do a minor change to the mock function to return a new **Promise**:, and we use *resolve* or *reject* to control the flow of the promise chain:
+We do a minor change to that mock function, allowing it to return a new **Promise**, and we use *resolve* or *reject* to control the flow of the promise chain:
+
 ```javascript
 function mockFetchWithPromise(action) {
   return new Promise((resolve, reject) => {
@@ -180,6 +190,7 @@ function mockFetchWithPromise(action) {
 ```
 
 Here is the same flow from our last section, but without the pyramid of doom:
+
 ```javascript
 // Test the promise here.
 mockFetchWithPromise("login")
@@ -200,35 +211,39 @@ mockFetchWithPromise("login")
   });
 ```
 
-That is a sight for our sore eyes, after hours in front of the IDE.
+That is quite a sight for our sore eyes, after hours in front of the IDE.
 
 # Promises to Orchestrate
 
-Let's assume that during the user's login, we also want to open a pipe to supply analytics on their usage, and show them some  ads. Not necessarily in any order, nor all required. 
-We don't want to fall back to the callback hell again with too many conditions. Thankfully we have APIs to keep organized in the form of **Promise.all()**, **Promise.any()**, **Promise.race()** .
+Let's assume that during the user's login, we also want to open a pipe to supply analytics on their usage, and show them some ads. 
 
-Starting with loging in the user and supplying analytics, we want these 2 to always happen before any other action:
+Not necessarily in any order. 
+
+We don't want to fall back to the callback hell again with too many conditions or indentations. 
+Thankfully we have APIs to keep organized in the form of **Promise.all()**, **Promise.any()**, **Promise.race()** .
+
+Starting with logging in the user and supplying analytics, we want these 2 to always happen before any other action:
 
 ```javascript
 function mockAction(action) {
-		return new Promise((resolve, reject) => {
-			// A random 1billion statements and 80% chance to succeed.
-			let randomNumber = Math.floor(Math.random() * 100000000);
-			let shouldItSucceed = Math.random() < 0.9;
+  return new Promise((resolve, reject) => {
+    // A random 1billion statements and 80% chance to succeed.
+    let randomNumber = Math.floor(Math.random() * 100000000);
+    let shouldItSucceed = Math.random() < 0.9;
 
-			// A random iteration to simulate processing time.
-			while (randomNumber > 0) {
-				randomNumber -= 1;
-			}
+    // A random iteration to simulate processing time.
+    while (randomNumber > 0) {
+      randomNumber -= 1;
+    }
 
-			// A naive user Log in.
-			if (shouldItSucceed) {
-				resolve(`Action: ${action} Succeeded`);
-			} else {
-				throw reject(`Action: ${action} Failed`);
-			}
-		});
-	}
+    // A naive user Log in.
+    if (shouldItSucceed) {
+      resolve(`Action: ${action} Succeeded`);
+    } else {
+      throw reject(`Action: ${action} Failed`);
+    }
+  });
+}
 
 Promise.all([mockAction("login"), mockAction("analytics")])
   .then(([loginResult, analyticsPipeResult]) => {
@@ -241,11 +256,19 @@ Promise.all([mockAction("login"), mockAction("analytics")])
   });
 ```
 
+All results are grouped up:
 
-With ads, we have a different strategy. Given we have 3 different ad-vendors, for us it doesn't matter who is currently supplying or even if they all are supplying, we just need one to give us that ad revenue. Though it's not critical to have ads, we still want to act on it if we see all have failed. 
+```bash
+node .\nodejs_promises\promises.js
+Result: login Succeeded, analytics Succeeded
+```
+
+With ads, we have a different strategy. 
+
+Assume we have 3 different ad-vendors, for us it doesn't matter who is currently supplying us or even if they all are supplying simultaneously.
+We just need one vendor to give us an ad revenue. Though it's not critical to have all ads, we still want to act if all fail.
 
 To do this, we will use the *any()* API, which runs a callback if any of our promises settles, or all fail:
-
 
 ```javascript
 // Test the promise here.
@@ -265,12 +288,15 @@ node .\nodejs_promises\promises.js
 Result: Action: ad2 Succeeded
 ```
 
-A different variant of *any()* is *race()*. The *race()* api will hit a callback if the first to settle is either a success or a failure. 
+A different variant of *any()* is *race()*. 
+
+The *race()* api will run a callback when the first promise settles, either as a success or a failure. 
+
 The difference between these two is the way they **short-circuit**:
--  *any()* short-circuits on the first resolved
+-  *any()* short-circuits on the first resolved promise, or when all fail.
 -  *race()* short-circuits on the first settled (being either a resolved or rejected result).
 
-Let's orchestrate all these promises together:
+Let's orchestrate these promises together:
 
 ```javascript
 // Test the promise here.
@@ -294,21 +320,23 @@ requiredPromises
   });
 ```
 
-And our promises will resolve with these set of results:
+Printing these set of results:
 
 ```bash
 node .\nodejs_promises\promises.js
 Result: Action: login Succeeded,Action: analytics Succeeded,Action: ad1 Succeeded
 ```
 
-The required flows have both resolved, while from the ad flows, only ad1 resolved which is enough for us to run knowingly with one set of ads.
+The required flows have both resolved, while from the ad flows: only ad1 resolved, which is enough for us to run confidently with one set of ads.
 
-# Good Things come to those who AWAIT
+# Good Things Come to Those Who AWAIT
 
-Javascript loved the idea of promises and how clear the code was getting, and with ES2017 released the **async** and **await** constructs.
-These are a higher level abstraction than promises, but built on a combination of promises and generators.
+Javascript loved the idea of promises and how clear the code was getting. With ES2017, javascript released the **async** and **await** constructs.
+
+These are higher level abstraction than promises, but built on a combination of promises and generators.
 
 We will reuse the same *mockAction* function from the last section, but alter the way it gets resolved:
+
 ```javascript
 function mockAction(action) {
 		return new Promise((resolve, reject) => {
@@ -322,9 +350,10 @@ function mockAction(action) {
 ```
 
 No more *then()*, *except()* or *finally()* callbacks, we are calling asynchronous functions as if they were a single instruction.
+
 Using the **await** construct, the program flow will halt until the promise returns - but for us to use it, we need to be in a function tagged with **async**, or in the above case, a anonymous arrow function.
 
-Note that prepending async to any function, means it returns a promise:
+Note that prepending async to any function, changes it return to a promise:
 
 ```javascript
 let someFunction = async () => "nothing really";
@@ -333,11 +362,11 @@ someFunction().then((result) =>
 );
 ```
 
-# Don't Except Callback Legacy, Promisify!
+# Don't Accept Callback Legacy, Promisify!
 
-Promises and await make the code so much cleaner. But what if you are using another's legacy callback-ridden library? 
+**Promises** and **await** made the code so much cleaner. But what if you are using another's library, full legacy callback-ridden code? 
 
-We have to use the promisify pattern. Example here is an ugly callback from our first section:
+In this case, we have to use the promisify pattern. Example here is a function with a callback signature:
 
 ```javascript
 /**
@@ -355,6 +384,7 @@ mockFetchWithCallback((error, result) => console.log(`Result: ${result}`));
 Most callbacks in nodejs have the *(error, value)* signature. This is shared across the javascript API contract space.
 
 Let's modernize it with a promise wrapper:
+
 ```javascript
 mockFetchPromisified = () => {
   return new Promise((resolve, reject) => {
@@ -371,7 +401,9 @@ mockFetchPromisified = () => {
 mockFetchPromisified().then(console.log);
 ```
 
-Being good engineers, we don't want to write extra boiler plate code, so many frameworks come with their own promisify utility. This example uses node's (remember from above, it needs the error and value signature to work):
+Being good engineers, we don't want to write extra boiler plate code.
+
+So many frameworks come with their own promisify utility. This example uses node's utilities (remember from above, it needs the error and value signature to work):
 
 ```javascript
 const util = require("util");
@@ -380,11 +412,12 @@ const mockFetchPromisifiedUtil = util.promisify(mockFetchWithCallback);
 mockFetchPromisifiedUtil().then(console.log);
 ```
 
-That's another victory over boiler plate code!
+That's another victory over boilerplate code!
 
 # Conclusion
 
 In this article we revised the Promises framework in ECMA 6 and above javascript. We understood the basics of a Promise and its various APIs.
+
 In addition, we learned that we can modern legacy callback APIs with promisify patterns, making our code simpler and more fluent.
 
 ## References
@@ -395,7 +428,7 @@ In addition, we learned that we can modern legacy callback APIs with promisify p
 
 ## Github
 
-Code in this article is available on [Github](https://github.com/adamd1985/vue-nuxt-gh-static-landingpage).
+This article and its code is available on [Github](https://github.com/adamd1985/articles/tree/main/nodejs_promises).
 
 #
 
