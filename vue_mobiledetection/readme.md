@@ -1,5 +1,5 @@
-# Vue and Capacitor - Porting to Mobile Apps made Easy
- <!-- title: Vue and Capacitor - Porting to Mobile Apps made Easy -->
+# VueJS and Capacitor -Portable Mobile Apps made Easy
+ <!-- title: VueJS and Capacitor -Portable Mobile Apps made Easy -->
 ![Image: Capacitors](capcitors.PNG "Capacitors")
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
