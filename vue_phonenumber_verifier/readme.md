@@ -2,7 +2,7 @@
 
  <!-- title: Talk to your Users - with Firebase and Twilio -->
 
-![Image: Phone numbers](banner.PNG "Phone numbers")
+![Image: Phone numbers](banner.png "Phone numbers")
 
 As product makers, at some point we want to message our users. Luckily firebase SDKs come equiped with that.
 In this article, we will create an app that verifies that a user has a valid mobile number, and send them a welcome SMS through a Twilio's messaging services.
