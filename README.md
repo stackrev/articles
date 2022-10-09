@@ -1,5 +1,7 @@
 # Technical Articles Collection
 
+- Talk to your Users - with Firebase and Twilio - [Github](https://github.com/adamd1985/articles/blob/main/vue_phonenumber_verifier/README.md)
+- VueJS and Capacitor -Portable Mobile Apps made Easy - [Github](https://github.com/adamd1985/articles/blob/main/vue_mobiledetection/README.md)
 - Emotional engagement In Agile - [Github](https://github.com/adamd1985/articles/blob/main/emotional_engagement_in_agile/README.MD)
 - Public Git Commits might Reveal Your Personal Email - [Github](https://github.com/adamd1985/articles/blob/main/hiding_your_git_email/README.MD)
 - Kubernetes - Your First Steps into Power and Scale - [Github](https://github.com/adamd1985/articles/blob/main/k8s_firststeps/readme.md)
